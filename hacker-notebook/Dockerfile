@@ -50,5 +50,7 @@ RUN pip install pyopenssl==19.0.0 service_identity==18.1.0 Twisted==18.9.0 && \
 #copy the primary notebook
 COPY --chown=1000:100 Hacker.ipynb $HOME/
 
+WORKDIR $HOME
+
 CMD ["start-notebook.sh","--NotebookApp.token="]
 
